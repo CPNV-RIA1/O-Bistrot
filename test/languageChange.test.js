@@ -25,4 +25,17 @@ describe('testing the behavior of the page when changing language', () => {
         expect(document.querySelector('[data-i18n="greeting"]').textContent).toBe(/* TODO: replace with the actual text */);
         expect(document.querySelector('[data-i18n="description"]').textContent).toBe(/* TODO: replace with the actual text */);
     });
+
+    test("User entered content should be stable after language change", async () => {
+        //given
+        const username = document.getElementById("username").innerHTML;
+
+        //when
+        await changeLanguage("en");
+
+        //then
+        expect(document.getElementById("username").innerHTML).toBe(username);
+
+
+    });
 });
