@@ -11343,7 +11343,8 @@ hr {
 .header {
   position: relative;
   min-height: 650px;
-  background: url(../imgs/header.jpg) no-repeat center center fixed;
+  background: url(https://images.pexels.com/photos/64208/pexels-photo-64208.jpeg?auto=compress&cs=tinysrgb&) no-repeat;
+  background-position: right;
   background-size: cover;
 }
 
@@ -11377,8 +11378,8 @@ hr {
 .header .overlay .logo {
   width: 200px;
   margin-bottom: 30px;
-  -webkit-filter: drop-shadow(0 0 40px rgba(206, 212, 218, 0.4));
-          filter: drop-shadow(0 0 40px rgba(206, 212, 218, 0.4));
+  -webkit-filter: drop-shadow(0 0 40px rgba(206, 212, 218, 1));
+          filter: drop-shadow(0 0 40px rgba(206, 212, 218, 1));
 }
 
 .header .overlay .subtitle {
@@ -11520,6 +11521,18 @@ section.has-img-bg:after {
   height: 100%;
   background: rgba(7, 5, 2, 0.7);
   z-index: 1;
+}
+
+.rating {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.restaurant-heah{
+  display: flex;
+  justify-content: space-between;
 }
 
 .section-subtitle {
