@@ -1,0 +1,15 @@
+#Jetbrains folder
+/.idea
+#OS generated files
+.DS_Store
+#Temporary files
+/tmp
+.tmp
+*.swp
+#Node modules
+node_modules
+#Compiled files
+dist
+#Environment file
+.env
+```
