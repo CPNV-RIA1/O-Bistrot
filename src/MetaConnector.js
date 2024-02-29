@@ -1,8 +1,5 @@
 class MetaConnector {
 
-    status;
-    name;
-    email;
     constructor() {
 
     }
