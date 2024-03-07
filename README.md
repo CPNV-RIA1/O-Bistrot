@@ -12,6 +12,9 @@ List all dependencies and their version needed by the project as :
 ### On dev environment
 ### On integration environment
 ## Directory structure
+## Design
+- [HTML Template](https://www.free-css.com/free-css-templates/page277/pigga)
+- [Zonning figma](https://www.figma.com/file/C4iOldeuuSRcGp3kcR0gpv/O-Bistrot?type=design&node-id=0%3A1&mode=design&t=AwjxqQ0ZgTjpz8BE-1)
 ## Collaborate
 
 To collaborate on the project, the following conventions must be followed:
