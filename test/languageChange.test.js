@@ -11,10 +11,10 @@ import expect from "expect";
 
 describe('testing the behavior of the page when changing language', () => {
 
-    test('Language change should update text content', async () => {
+    test('Language change should update text content to English', async () => {
         //given
         document.body.innerHTML = `
-        <h1 data-i18n="greeting">Hello, World!</h1> 
+        <h1 data-i18n="greeting">Hello, Welcome!</h1> 
         <p data-i18n="description">This is a sample application.</p>
     `; // TODO: Replace with actual html paragraphs
 
