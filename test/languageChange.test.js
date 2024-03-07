@@ -26,6 +26,36 @@ describe('testing the behavior of the page when changing language', () => {
         expect(document.querySelector('[data-i18n="description"]').textContent).toBe(/* TODO: replace with the actual text */);
     });
 
+    test('Language change should update text content to French', async () => {
+        //given
+        document.body.innerHTML = `
+        <h1 data-i18n="greeting">Bonjour, Bienvenue!</h1> 
+        <p data-i18n="description">Il s'agit d'un exemple d'application.</p>
+    `; // TODO: Replace with actual html paragraphs
+
+        //when
+        await changeLanguage("en");
+
+        //then
+        expect(document.querySelector('[data-i18n="greeting"]').textContent).toBe(/* TODO: replace with the actual text */);
+        expect(document.querySelector('[data-i18n="description"]').textContent).toBe(/* TODO: replace with the actual text */);
+    });
+
+    test('Language change should update text content to English', async () => {
+        //given
+        document.body.innerHTML = `
+        <h1 data-i18n="greeting">Hallo Willkommen!</h1> 
+        <p data-i18n="description">Dies ist ein Anwendungsbeispiel.</p>
+    `; // TODO: Replace with actual html paragraphs
+
+        //when
+        await changeLanguage("de");
+
+        //then
+        expect(document.querySelector('[data-i18n="greeting"]').textContent).toBe(/* TODO: replace with the actual text */);
+        expect(document.querySelector('[data-i18n="description"]').textContent).toBe(/* TODO: replace with the actual text */);
+    });
+
     test("User entered content should be stable after language change", async () => {
         //given
         const username = document.getElementById("username").innerHTML;
