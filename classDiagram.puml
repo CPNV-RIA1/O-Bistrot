@@ -1,0 +1,21 @@
+@startuml
+
+class User {
+    - status: String
+    - userId: String
+
+    + login(connector: MetaConnector): void
+    + logout(): void
+    + importMetaData(data: Array): void
+    + getStatus(): String
+    + getUserId(): String
+}
+
+class MetaConnector {
+    + login(): Array
+    + logout(): void
+}
+
+User o-- MetaConnector
+
+@enduml
