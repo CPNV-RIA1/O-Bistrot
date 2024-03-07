@@ -19,12 +19,12 @@ To collaborate on the project, the following conventions must be followed:
 - each story must be created in a dedicated feature with the following naming: `feature/BDD-name-of-the-feature`.
 - commits must respect the following conventions:
   - `feat: add new feature`
-  - fix: fix a bug
-  - refactor: refactor code` `style: change style`.
-  - style: change style
-  - docs: change documentation`
-  - test: add tests`
-  - chore: change configuration`
+  - `fix: fix a bug`
+  - `refactor: refactor code` `style: change style`.
+  - `style: change style`
+  - `docs: change documentation`
+  - `test: add tests`
+  - `chore: change configuration`
 
 ## Authors
 - Victorien Montavon
