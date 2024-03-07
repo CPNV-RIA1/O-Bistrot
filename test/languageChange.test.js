@@ -65,7 +65,5 @@ describe('testing the behavior of the page when changing language', () => {
 
         //then
         expect(document.getElementById("username").innerHTML).toBe(username);
-
-
     });
 });
