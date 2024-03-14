@@ -50,4 +50,24 @@ describe('testing localization off', async () => {
         // Assuming the DOM structure changes after the language change
         expect(updatedDOM).not.toEqual(initialDOM);
     });
+
+    test('User entered content change', async () => {
+        //given
+        // Get an entered content, here username input value
+        const username = await driver.findElement(By.id('username')).getAttribute('value');
+
+        //when
+        // Simulate language change action (for example, clicking a language selector)
+        await driver.findElement(By.id('language-selector')).click();
+
+        // Wait for the language to update (0.5 seconds)
+        await driver.wait(500);
+
+        // Get the updated DOM structure after the language change
+        const updatedUsername = await driver.findElement(By.id('username')).getAttribute('value');
+
+        //then
+        // Assuming the DOM structure changes after the language change
+        expect(updatedUsername).toEqual(username);
+    });
 });
