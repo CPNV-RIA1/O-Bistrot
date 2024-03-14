@@ -9,10 +9,10 @@ const { expect, test, describe } = require('@jest/globals');
 const { Builder, By, until } = require('selenium-webdriver');
 const { Options, Select } = require('selenium-webdriver/chrome');
 
-
-describe('testing localization off', async () => {
+describe('testing localization off', () => { // remove async here
     //set up the scenario
     let driver;
+    let options;
 
     beforeAll(async () => {
         // Create profile for prevent the real localization or external behavior
@@ -25,7 +25,7 @@ describe('testing localization off', async () => {
             .build();
 
         // Let Selenium go to the webpage
-        await driver.get('http://localhost:3000');
+        await driver.get('http://localhost:5500/public_html/index.html');
     });
 
     afterAll(async () => {
@@ -39,14 +39,9 @@ describe('testing localization off', async () => {
 
         //when
         // Simulate language change action (for example, clicking a language selector)
-        const selectElement = await driver.findElement(By.id('change-language'))
-        const select = new Select(selectElement)
-        
-        await select.selectByValue('de')
-
-
-        // Wait for the language to update (0.5 seconds)
-        await driver.wait(500);
+        const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
+        const option = await selectElement.findElement(By.css(`option[value='fr']`));
+        await option.click();
 
         // Get the updated DOM structure after the language change
         const updatedDOM = await driver.getPageSource();
