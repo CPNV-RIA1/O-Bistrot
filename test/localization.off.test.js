@@ -70,4 +70,26 @@ describe('testing localization off', async () => {
         // Assuming the DOM structure changes after the language change
         expect(updatedUsername).toEqual(username);
     });
+
+    test('Positioning of graphical elements', async () => {
+        //given
+        // Get the initial html structure and css elements
+        const initialHTML = await driver.getPageSource();
+        const initialCSS = await driver.executeScript(getComputedStyle);
+
+        //when
+        await driver.findElement(By.id('language-selector')).click();
+
+        // Wait for the language to update (0.5 seconds)
+        await driver.wait(500);
+
+        // Get the updated html structure and css elements
+        const updatedHTML = await driver.getPageSource();
+        const updatedCSS = await driver.executeScript(getComputedStyle);
+
+        //then
+        // Assuming the HTML structure and CSS style has not changed after language update
+        expect(updatedHTML).toEqual(initialHTML);
+        expect(updatedCSS).toEqual(initialCSS);
+    });
 });
