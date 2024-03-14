@@ -2,15 +2,21 @@ class User{
     status;
     userId;
 
+    constructor(){
+        this.status = 'disconnected';
+    }
 
     login(connector){
-        throw new Error('Not implemented');
+        let userDataJson = connector.login();
+        return userDataJson;
     }
     logout(){
-        throw new Error('Not implemented');
+        this.status = 'disconnected';
+        this.userId = "";
     }
     importMetaData(data){
-        throw new Error('Not implemented');
+        this.status = data.status;
+        this.userId = data.authResponse.userID;
     }
 }
 
