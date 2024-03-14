@@ -23,11 +23,29 @@ To collaborate on the project, the following conventions must be followed:
 - commits must respect the following conventions:
   - `feat: add new feature`
   - `fix: fix a bug`
-  - `refactor: refactor code` `style: change style`.
+  - `refactor: refactor code`
+  - `style: change style`.
   - `style: change style`
   - `docs: change documentation`
   - `test: add tests`
   - `chore: change configuration`
+- To create tests, we use the Jest framework and keep to its conventions. Tests must be separated into two categories:
+  - Online (real) tests, which use real API calls
+  - Offline (off) tests, which use mocks for API calls
+
+  Here is an example of test naming:
+    ```javascript
+    describe('User initialisation', () => {
+        test('initialize User', () => {
+            // GIVEN
+            let user;
+            // WHEN
+            user = new User();
+            // THEN
+            expect(user.status).toEqual('disconnected');
+        });
+    });
+    ```
 
 ## Authors
 - Victorien Montavon
