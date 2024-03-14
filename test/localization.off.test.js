@@ -5,9 +5,9 @@
  * Version : 1.0
  */
 
-import {expect, jest, test, describe} from '@jest/globals';
-import {Builder, By, until} from "selenium-webdriver";
-import {Options, Select} from "selenium-webdriver/chrome";
+const { expect, test, describe } = require('@jest/globals');
+const { Builder, By, until } = require('selenium-webdriver');
+const { Options, Select } = require('selenium-webdriver/chrome');
 
 
 describe('testing localization off', async () => {
