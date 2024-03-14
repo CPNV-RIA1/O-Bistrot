@@ -92,7 +92,7 @@
                         <b>Adresse</b>
                         <span>Place Pestalozzi 7</span>
                         <span>1400 Yverdon-les-Bains</span>
-                        <span>Switzerland</span>                        
+                        <span>Switzerland</span>
                     </p>
                 </div>
 
@@ -117,9 +117,17 @@
                     </p>
                 </div>
                 <div class="col">
-                    <a class="col" href="restaurant.html?lang=de">Deutsch</a>
-                    <a class="col" href="restaurant.html?lang=en">English</a>
-                    <a class="col" href="restaurant.html?lang=fr">Français</a>
+                    <select id="change-language">
+                        <option value="fr" selected="selected">
+                            Français
+                        </option>
+                        <option value="en">
+                            English
+                        </option>
+                        <option value="de">
+                            Deutsch
+                        </option>
+                    </select>
                 </div>
                 <div class="d-none d-md-block">
                     <h6 class="small mb-0">
@@ -142,6 +150,8 @@
     <!-- Pigga js -->
     <script src="assets/js/pigga.js"></script>
 
+    <!-- Translations -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>
 </body>
 
 </html>

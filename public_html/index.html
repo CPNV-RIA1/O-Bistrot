@@ -51,7 +51,6 @@
             <h1 class="subtitle">Votre solution de reservation en 1 clique</h1>
         </div>
     </header>
-    <!-- End Of Page Header -->
 
     <!-- Service Section -->
     <section id="restaurants" class="pattern-style-4 has-overlay">
@@ -196,9 +195,17 @@
                     </p>
                 </div>
                 <div class="col">
-                    <a class="col" href="index.html?lang=de">Deutsch</a>
-                    <a class="col" href="index.html?lang=en">English</a>
-                    <a class="col" href="index.html?lang=fr">Français</a>
+                    <select id="change-language">
+                        <option value="fr" selected="selected">
+                            Français
+                        </option>
+                        <option value="en">
+                            English
+                        </option>
+                        <option value="de">
+                            Deutsch
+                        </option>
+                    </select>
                 </div>
                 <div class="d-none d-md-block">
                     <h6 class="small mb-0">
@@ -221,6 +228,8 @@
     <!-- Pigga js -->
     <script src="assets/js/pigga.js"></script>
 
+    <!-- Translations -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>
 </body>
 
 </html>
