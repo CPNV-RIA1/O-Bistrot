@@ -55,7 +55,6 @@ test('MetaConnector_Log_a_Person_out_success', () => {
     user.logout();
     // THEN
     expect(user.status).toEqual('disconnected');
-    expect(user.name).toEqual('');
-    expect(user.email).toEqual('');
+    expect(user.userId).toEqual('');
 
 });
