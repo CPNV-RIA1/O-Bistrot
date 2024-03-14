@@ -7,7 +7,8 @@
 
 import {expect, jest, test, describe} from '@jest/globals';
 import {Builder, By, until} from "selenium-webdriver";
-import {Options} from "selenium-webdriver/chrome";
+import {Options, Select} from "selenium-webdriver/chrome";
+
 
 describe('testing localization off', async () => {
     //set up the scenario
@@ -38,7 +39,11 @@ describe('testing localization off', async () => {
 
         //when
         // Simulate language change action (for example, clicking a language selector)
-        await driver.findElement(By.id('language-selector')).click();
+        const selectElement = await driver.findElement(By.id('change-language'))
+        const select = new Select(selectElement)
+        
+        await select.selectByValue('de')
+
 
         // Wait for the language to update (0.5 seconds)
         await driver.wait(500);
