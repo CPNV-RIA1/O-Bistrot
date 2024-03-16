@@ -82,21 +82,21 @@ describe('testing localization off', () => { // remove async here
         //given
         // Get the initial html structure and css elements
         const initialHTML = await driver.getPageSource();
-        const initialCSS = await driver.executeScript(getComputedStyle);
-
+        const body = await driver.wait(until.elementLocated(By.id('home')), 5000);
+        const initialBodyWith = await body.getCssValue('width');
+    
         //when
-        await driver.findElement(By.id('language-selector')).click();
-
-        // Wait for the language to update (0.5 seconds)
-        await driver.wait(500);
-
+        const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
+        const option = await selectElement.findElement(By.css(`option[value='fr']`));
+        await option.click();
+        
         // Get the updated html structure and css elements
         const updatedHTML = await driver.getPageSource();
-        const updatedCSS = await driver.executeScript(getComputedStyle);
-
+        const updatedBodyWidth = await body.getCssValue('width');
+    
         //then
         // Assuming the HTML structure and CSS style has not changed after language update
         expect(updatedHTML).toEqual(initialHTML);
-        expect(updatedCSS).toEqual(initialCSS);
+        expect(updatedBodyWidth).toEqual(initialBodyWith);
     });
 });
