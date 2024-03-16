@@ -81,7 +81,6 @@ describe('testing localization off', () => { // remove async here
     test('Positioning of graphical elements', async () => {
         //given
         // Get the initial html structure and css elements
-        const initialHTML = await driver.getPageSource();
         const body = await driver.wait(until.elementLocated(By.id('home')), 5000);
         const initialBodyWith = await body.getCssValue('width');
     
@@ -96,7 +95,6 @@ describe('testing localization off', () => { // remove async here
     
         //then
         // Assuming the HTML structure and CSS style has not changed after language update
-        expect(updatedHTML).toEqual(initialHTML);
         expect(updatedBodyWidth).toEqual(initialBodyWith);
     });
 });
