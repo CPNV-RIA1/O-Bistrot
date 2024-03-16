@@ -53,8 +53,16 @@ describe('testing localization off', () => { // remove async here
 
     test('User entered content change', async () => {
         //given
-        // Get an entered content, here username input value
-        const bookingDate = await driver.findElement(By.id('date')).getAttribute('value');
+        const datePicker = driver.find_element_by_id("date-input")
+
+        //set the initial date
+        datePicker.click()
+        const date_element = driver.find_element_by_xpath("//div[@class='date'][text()='25']")
+        date_element.click()
+
+
+        // Get the initial booking date
+        const bookingDate = await datePicker.getAttribute('value');
 
         //when
         // Simulate language change action (for example, clicking a language selector)
@@ -63,11 +71,11 @@ describe('testing localization off', () => { // remove async here
         await option.click();
 
 
-        // Get the updated DOM structure after the language change
-        const updatedBookingDate = await driver.findElement(By.id('date')).getAttribute('value');
+        // Get the updated date
+        const updatedBookingDate = await datePicker.getAttribute('value');
 
         //then
-        // Assuming the DOM structure changes after the language change
+        // Assuming the dates are the same after the language change
         expect(updatedBookingDate).toEqual(bookingDate);
     });
 
