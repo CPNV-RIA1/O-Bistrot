@@ -66,7 +66,7 @@ describe('testing localization off', () => { // remove async here
         //when
         // Simulate language change action (for example, clicking a language selector)
         const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
-        const option = await selectElement.findElement(By.css(`option[value='fr']`));
+        const option = await selectElement.findElement(By.css(`option[value='en']`));
         await option.click();
 
 
@@ -86,7 +86,7 @@ describe('testing localization off', () => { // remove async here
     
         //when
         const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
-        const option = await selectElement.findElement(By.css(`option[value='fr']`));
+        const option = await selectElement.findElement(By.css(`option[value='de']`));
         await option.click();
         
         // Get the updated html structure and css elements
