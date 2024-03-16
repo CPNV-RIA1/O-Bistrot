@@ -53,12 +53,11 @@ describe('testing localization off', () => { // remove async here
 
     test('User entered content change', async () => {
         //given
-        const datePicker = driver.find_element_by_id("date-input")
+        const datePicker = await driver.wait(until.elementLocated(By.id('date-input')), 5000);
 
         //set the initial date
-        datePicker.click()
-        const date_element = driver.find_element_by_xpath("//div[@class='date'][text()='25']")
-        date_element.click()
+        await datePicker.click()
+        await datePicker.sendKeys('03-04-2024');
 
 
         // Get the initial booking date
