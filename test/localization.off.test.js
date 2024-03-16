@@ -25,7 +25,7 @@ describe('testing localization off', () => { // remove async here
             .build();
 
         // Let Selenium go to the webpage
-        await driver.get('http://localhost:5500/public_html/index.html');
+        await driver.get('http://localhost:5500/public_html/restaurant.html');
     });
 
     afterAll(async () => {
@@ -54,21 +54,21 @@ describe('testing localization off', () => { // remove async here
     test('User entered content change', async () => {
         //given
         // Get an entered content, here username input value
-        const username = await driver.findElement(By.id('username')).getAttribute('value');
+        const bookingDate = screen.getById('date').value;
 
         //when
         // Simulate language change action (for example, clicking a language selector)
-        await driver.findElement(By.id('language-selector')).click();
+        const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
+        const option = await selectElement.findElement(By.css(`option[value='fr']`));
+        await option.click();
 
-        // Wait for the language to update (0.5 seconds)
-        await driver.wait(500);
 
         // Get the updated DOM structure after the language change
-        const updatedUsername = await driver.findElement(By.id('username')).getAttribute('value');
+        const updatedBookingDate = screen.getById('date').value;
 
         //then
         // Assuming the DOM structure changes after the language change
-        expect(updatedUsername).toEqual(username);
+        expect(updatedBookingDate).toEqual(bookingDate);
     });
 
     test('Positioning of graphical elements', async () => {
