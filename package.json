@@ -4,11 +4,24 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+
   "scripts": {
     "test": "jest"
   },
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CPNV-RIA1/O-Bistrot.git"
+  },
+  "author": "CySeVi",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CPNV-RIA1/O-Bistrot/issues"
+  },
+  "homepage": "https://github.com/CPNV-RIA1/O-Bistrot#readme",
+  "dependencies": {
+    "mocha": "^10.2.0",
+    "selenium-webdriver": "^4.18.1"
+  },
   "devDependencies": {
     "jest": "^29.7.0"
   }
