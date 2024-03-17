@@ -72,6 +72,13 @@
       grid-row: span 2;
     }
 
+    .validation-button{
+      grid-column: span 2;
+      display: flex;
+        justify-content: center;
+      align-items: baseline;
+    }
+
     .restaurant-rating {
       display: flex;
       justify-content: center;
