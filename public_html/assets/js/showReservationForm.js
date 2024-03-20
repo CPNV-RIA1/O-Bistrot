@@ -9,7 +9,7 @@
 function displayReservationForm() {
     const details = document.getElementById('details');
     const reservationForm = document.getElementById('reservationForm');
-console.log('displayReservationForm')
+
     details.classList.toggle('hidden');
     reservationForm.classList.toggle('hidden');
 }
