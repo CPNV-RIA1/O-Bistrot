@@ -21,14 +21,28 @@ To collaborate on the project, the following conventions must be followed:
 - git management is based on gitflow conventions
 - each story must be created in a dedicated feature with the following naming: `feature/BDD-name-of-the-feature`.
 - commits must respect the following conventions:
-  - `feat: add new feature`
+  - `feat: implementation about something new in a feature`
   - `fix: fix a bug`
-  - `refactor: refactor code` `style: change style`.
+  - `refactor: refactor code`
   - `style: change style`
   - `docs: change documentation`
   - `test: add tests`
-  - `chore: change configuration`
-
+  - `chore: change configuration and update readme/.gitingore`
+## Structure 
+```bash
+O-Bistrot
+.
+├── public_html
+│   └── assets
+│       css
+│       ├── imgs
+│       ├── js
+│       ├── scss
+│       └── vendors
+└── src
+    ├── test
+    └── models
+```
 ## Authors
 - Victorien Montavon
 - Cyprien Jaquier
