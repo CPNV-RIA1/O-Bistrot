@@ -43,6 +43,8 @@ O-Bistrot
     ├── test
     └── models
 ```
+## Diagrams
+[on figma](https://www.figma.com/file/dXGq9ZvB5ZjJXiPXw1TcwZ/Untitled?type=design&node-id=0-1&mode=design&t=E6n5gu7ZWdJKxPgy-0)
 ## Authors
 - Victorien Montavon
 - Cyprien Jaquier
