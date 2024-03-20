@@ -52,9 +52,12 @@ describe('testing localization off', () => { // remove async here
     });
 
     test('User entered content change', async () => {
-        //given
-        const datePicker = await driver.wait(until.elementLocated(By.id('date-input')), 5000);
+        //given 
+        const buttonToShowForm = await driver.wait(until.elementLocated(By.id('show-form-fr')), 5000);
+        await buttonToShowForm.click();
 
+        const datePicker = await driver.wait(until.elementLocated(By.id('date')), 5000);
+        
         //set the initial date
         await datePicker.click()
         await datePicker.sendKeys('03-04-2024');
