@@ -48,7 +48,12 @@ describe('testing localization off', () => { // remove async here
         expect(updatedDOM).not.toEqual(initialDOM);
     });
 
-    test('User entered content change', async () => {
+    test('User entered content change', async () => {        
+        // Simulate language change action (for example, clicking a language selector)
+        const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
+        const optionFR = await selectElement.findElement(By.css(`option[value='fr']`));
+        await optionFR.click();
+
         //Toggle the display of the form 
         const buttonToShowForm = await driver.wait(until.elementLocated(By.id('show-form-fr')), 5000);
         await buttonToShowForm.click();
@@ -62,9 +67,8 @@ describe('testing localization off', () => { // remove async here
         const bookingDate = await datePicker.getAttribute('value');
 
         // Simulate language change action (for example, clicking a language selector)
-        const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
-        const option = await selectElement.findElement(By.css(`option[value='en']`));
-        await option.click();
+        const optionEN = await selectElement.findElement(By.css(`option[value='en']`));
+        await optionEN.click();
 
         // Get the updated date
         const updatedBookingDate = await datePicker.getAttribute('value');
