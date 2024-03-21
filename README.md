@@ -44,7 +44,7 @@ O-Bistrot
     └── models
 ```
 ## Diagrams
-[on figma](https://www.figma.com/file/dXGq9ZvB5ZjJXiPXw1TcwZ/Untitled?type=design&node-id=0-1&mode=design&t=E6n5gu7ZWdJKxPgy-0)
+[on figma](https://www.figma.com/file/yOVI2HH2C1dpsqDpLlH6it/Diagrams?type=design&node-id=2-2&mode=design&t=EIcA1AfOcoe1ms3t-0)
 ## Authors
 - Victorien Montavon
 - Cyprien Jaquier
