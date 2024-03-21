@@ -7,8 +7,7 @@ class User{
     }
 
     login(connector){
-        let userDataJson = connector.login();
-        return userDataJson;
+        return connector.login();
     }
     logout(){
         this.status = 'disconnected';

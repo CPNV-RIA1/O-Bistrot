@@ -1,11 +1,17 @@
 class MetaConnector {
-
     constructor() {
-
     }
 
     login() {
-        throw new Error('Not implemented');
+        return new Promise((resolve, reject) => {
+            FB.login(function(response) {
+                if (response.status === 'connected') {
+                    resolve(response);
+                } else {
+                    reject('Login failed');
+                }
+            });
+        });
     }
 
 }
