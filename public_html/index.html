@@ -28,15 +28,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#header">Accueil</a>
+                        <a data-lang="fr" class="nav-link" href="#header">Accueil</a>
+                        <a data-lang="en" class="nav-link" href="#header">Home</a>
+                        <a data-lang="de" class="nav-link" href="#header">Startseite</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#restaurants">Les restaurants</a>
+                        <a data-lang="fr" class="nav-link" href="#restaurants">Les restaurants</a>
+                        <a data-lang="en" class="nav-link" href="#restaurants">The restaurants</a>
+                        <a data-lang="de" class="nav-link" href="#restaurants">Die Restaurants</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="components.html" class="btn btn-primary btn-sm">Se connecter</a>
+                        <a data-lang="fr" href="components.html" class="btn btn-primary btn-sm">Se connecter</a>
+                        <a data-lang="en" href="components.html" class="btn btn-primary btn-sm">Login</a>
+                        <a data-lang="de" href="components.html" class="btn btn-primary btn-sm">Sich anmelden</a>
                     </li>
                 </ul>
             </div>
@@ -48,7 +54,9 @@
         <div class="overlay">
             <img src="assets/imgs/logo.svg" alt="Ô Bistrot" class="logo">
             <h1 class="title">Ô Bistrot</h1>
-            <h1 class="subtitle">Votre solution de reservation en 1 clique</h1>
+            <h1 data-lang="fr" class="subtitle">Votre solution de reservation en 1 clique</h1>
+            <h1 data-lang="en" class="subtitle">Your 1-click booking solution</h1>
+            <h1 data-lang="de" class="subtitle">Ihre Reservierungslösung in 1 Klick</h1>
         </div>
     </header>
     <!-- End Of Page Header -->
@@ -56,8 +64,12 @@
     <!-- Service Section -->
     <section id="restaurants" class="pattern-style-4 has-overlay">
         <div class="container raise-2">
-            <h6 class="section-subtitle text-center">Nos partenaires</h6>
-            <h3 class="section-title mb-6 pb-3 text-center">Les restaurants</h3>
+            <h6 data-lang="fr" class="section-subtitle text-center">Nos partenaires</h6>
+            <h6 data-lang="en" class="section-subtitle text-center">Our partners</h6>
+            <h6 data-lang="de" class="section-subtitle text-center">Unsere Partner</h6>
+            <h3 data-lang="fr" class="section-title mb-6 pb-3 text-center">Les restaurants</h3>
+            <h3 data-lang="en" class="section-title mb-6 pb-3 text-center">The restaurants</h3>
+            <h3 data-lang="de" class="section-title mb-6 pb-3 text-center">Die Restaurants</h3>
             <div class="row">
 
                 <div class="col-md-6 mb-4">
@@ -192,8 +204,24 @@
                 <div class="col">
                     <p class="mb-0 small">&copy;
                         <script>document.write(new Date().getFullYear())</script>, <a
-                            href="https://github.com/CPNV-RIA1/O-Bistrot" target="_blank">CYSEVI</a> All rights reserved
+                            href="https://github.com/CPNV-RIA1/O-Bistrot" target="_blank">CYSEVI</a>
+                            <span data-lang="fr">Tous droits réservés</span>
+                            <span data-lang="en">All rights reserved</span>
+                            <span data-lang="de">Alle Rechte vorbehalten</span>
                     </p>
+                </div>
+                <div class="col">
+                    <select id="change-language">
+                        <option value="fr" selected="selected">
+                            Français
+                        </option>
+                        <option value="en">
+                            English
+                        </option>
+                        <option value="de">
+                            Deutsch
+                        </option>
+                    </select>
                 </div>
                 <div class="d-none d-md-block">
                     <h6 class="small mb-0">
@@ -216,6 +244,8 @@
     <!-- Pigga js -->
     <script src="assets/js/pigga.js"></script>
 
+    <!-- Translations -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>
 </body>
 
 </html>
