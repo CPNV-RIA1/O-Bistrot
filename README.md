@@ -27,7 +27,7 @@ To collaborate on the project, the following conventions must be followed:
   - `style: change style`
   - `docs: change documentation`
   - `test: add tests`
-  - `chore: change configuration and update readme/.gitingore`
+  - `chore: change configuration and update readme/.gitignore`
 ## Structure 
 ```bash
 O-Bistrot
