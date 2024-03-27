@@ -6,12 +6,11 @@ class User{
         this.status = 'disconnected';
     }
 
-    login(connector){
-        return connector.login();
+    async login(connector){
+        return await connector.login();
     }
-    logout(){
-        this.status = 'disconnected';
-        this.userId = "";
+    async logout(connector){
+        return await connector.logout();
     }
     importMetaData(data){
         this.status = data.status;
