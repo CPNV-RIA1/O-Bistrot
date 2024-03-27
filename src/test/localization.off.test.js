@@ -97,6 +97,10 @@ describe('testing localization off', () => { // remove async here
         const option = await selectElement.findElement(By.css(`option[value='de']`));
         const initialBodyWith = await body.getCssValue('width');
 
+        // check that the initial language is not german
+        const selectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
+        expect(selectedLanguage).not.toEqual('de');
+
         // When
         // Change language to german
         await option.click();
@@ -104,7 +108,9 @@ describe('testing localization off', () => { // remove async here
         // Then
         // Get the updated html width
         const updatedBodyWidth = await body.getCssValue('width');
+        const updatedSelectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
         // Assuming the HTML width is the same after the language change and did not overflow the screen
+        expect(updatedSelectedLanguage).toEqual('de');
         expect(updatedBodyWidth).toEqual(initialBodyWith);
     });
 });
