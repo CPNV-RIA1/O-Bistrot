@@ -59,13 +59,16 @@ describe('testing localization off', () => { // remove async here
     test('User entered content change', async () => {
         // Given    
         const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
-        const optionFR = await selectElement.findElement(By.css(`option[value='fr']`));
         const buttonToShowForm = await driver.wait(until.elementLocated(By.id('show-form-fr')), 5000);
         const datePicker = await driver.wait(until.elementLocated(By.id('date')), 5000);
         const optionEN = await selectElement.findElement(By.css(`option[value='en']`));
 
-        // Set the initial laguage to French
-        await optionFR.click();
+        // check that the initial language is not english
+        const selectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
+        expect(selectedLanguage).not.toEqual('en');
+        expect(datePicker).not.toBeNull();
+        expect(await datePicker.getAttribute('value')).toEqual('');
+
         //Toggle the display of the form 
         await buttonToShowForm.click();
         //set the initial date
@@ -80,7 +83,9 @@ describe('testing localization off', () => { // remove async here
         // Then
         // Get the updated date
         const updatedBookingDate = await datePicker.getAttribute('value');
+        const updatedSelectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
         // Assuming the dates are the same after the language change
+        expect(updatedSelectedLanguage).toEqual('en');
         expect(updatedBookingDate).toEqual(bookingDate);
     });
 
