@@ -13,6 +13,9 @@
     <!-- Bootstrap + Pigga main styles -->
     <link rel="stylesheet" href="assets/css/pigga.css">
     <link rel="stylesheet" href="assets/css/custom-styles.css">
+    <script src="../src/User.js"></script>
+    <script src="../src/MetaConnector.js"></script>
+
 </head>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
@@ -39,10 +42,8 @@
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a data-lang="fr" href="components.html" class="btn btn-primary btn-sm">Se connecter</a>
-                        <a data-lang="en" href="components.html" class="btn btn-primary btn-sm">Login</a>
-                        <a data-lang="de" href="components.html" class="btn btn-primary btn-sm">Sich anmelden</a>
+                    <li id="login-container" class="nav-item">
+
                     </li>
                 </ul>
             </div>
@@ -248,13 +249,21 @@
     <script>
         window.fbAsyncInit = function() {
             FB.init({
-                appId            : 'your-app-id',
+                appId            : '719051660093443',
                 xfbml            : true,
                 version          : 'v19.0'
             });
         };
     </script>
     <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+
+    <script defer>
+        const user = new User();
+        const metaConnector = new MetaConnector();
+
+        const loginContainer = document.getElementById('login-container');
+        loginContainer.innerHTML = user.getButton(metaConnector);
+    </script>
 
     <!-- Translations -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>

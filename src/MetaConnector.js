@@ -14,6 +14,13 @@ class MetaConnector {
         });
     }
 
+    getButton() {
+        return '<a data-lang="fr" class="login-button btn btn-primary btn-sm">Se connecter</a>' +
+            '<a data-lang="en" class="login-button btn btn-primary btn-sm" >Login</a>' +
+            '<a data-lang="de" class="login-button btn btn-primary btn-sm">Sich anmelden</a>';
+
+    }
+
 }
 
-module.exports = MetaConnector;
+window.MetaConnector = MetaConnector;

@@ -17,6 +17,10 @@ class User{
         this.status = data.status;
         this.userId = data.authResponse.userID;
     }
+
+    getButton(connector){
+        return connector.getButton();
+    }
 }
 
-module.exports = User;
+window.User = User;
