@@ -15,7 +15,21 @@
     <link rel="stylesheet" href="assets/css/custom-styles.css">
     <script src="../src/User.js"></script>
     <script src="../src/MetaConnector.js"></script>
-</head>
+    <!-- core  -->
+    <script defer src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script defer src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap affix -->
+    <script defer src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <!-- Pigga js -->
+    <script defer src="assets/js/pigga.js"></script>
+    <!-- Facebook SDK -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script defer src="assets/js/loginHelper.js" defer></script>
+    <!-- Translations -->
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>
+    <!-- custom scripts -->
+    <script defer src="assets/js/showReservationForm.js"></script>
+    <script defer src="assets/js/validateTime.js"></script>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" style="display: flex; flex-direction: column;">
 
@@ -147,9 +161,12 @@
                         <h2 data-lang="fr">Réservation</h2>
                         <h2 data-lang="en">Booking</h2>
                         <h2 data-lang="de">Reservierung</h2>
-                        <button id="show-form-fr" onclick="displayReservationForm()" data-lang="fr" class="btn btn-primary">Réserver une table</button>
-                        <button id="show-form-de" onclick="displayReservationForm()" data-lang="en" class="btn btn-primary">Book a table</button>
-                        <button id="show-form-en" onclick="displayReservationForm()" data-lang="de" class="btn btn-primary">Einen Tisch reservieren</button>
+                        <button id="show-form-fr" onclick="displayReservationForm()" data-lang="fr"
+                            class="btn btn-primary">Réserver une table</button>
+                        <button id="show-form-de" onclick="displayReservationForm()" data-lang="en"
+                            class="btn btn-primary">Book a table</button>
+                        <button id="show-form-en" onclick="displayReservationForm()" data-lang="de"
+                            class="btn btn-primary">Einen Tisch reservieren</button>
                     </div>
                 </div>
             </div>
@@ -249,30 +266,6 @@
 
     </footer>
     <!-- End of Page Footer -->
-
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Pigga js -->
-    <script src="assets/js/pigga.js"></script>
-
-    <!-- Facebook SDK -->
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
-
-    <script src="assets/js/loginHelper.js" defer></script>
-
-    <!-- Translations -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>
-
-    <!-- custom scripts -->
-    <script src="assets/js/showReservationForm.js"></script>
-    <script src="assets/js/validateHourForm.js"></script>
-
-
 </body>
 
 </html>
