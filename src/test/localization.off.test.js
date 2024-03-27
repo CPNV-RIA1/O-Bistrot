@@ -39,6 +39,10 @@ describe('testing localization off', () => { // remove async here
         const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
         const option = await selectElement.findElement(By.css(`option[value='fr']`));
 
+        // check that the initial language is not french
+        const selectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
+        expect(selectedLanguage).not.toEqual('fr');
+
         // When
         // Change language to french
         await option.click();
@@ -46,8 +50,10 @@ describe('testing localization off', () => { // remove async here
         // Then
         // Get the updated DOM structure after the language change
         const updatedDOM = await driver.getPageSource();
+        const updatedSelectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
         // Assuming the DOM structure changes after the language change
         expect(updatedDOM).not.toEqual(initialDOM);
+        expect(updatedSelectedLanguage).toEqual('fr');
     });
 
     test('User entered content change', async () => {
@@ -66,7 +72,7 @@ describe('testing localization off', () => { // remove async here
         await datePicker.click()
         await datePicker.sendKeys('03-04-2024');
         const bookingDate = await datePicker.getAttribute('value');
-        
+
         // When
         // Change language to english
         await optionEN.click();
