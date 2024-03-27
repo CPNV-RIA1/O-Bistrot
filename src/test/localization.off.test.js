@@ -25,7 +25,7 @@ describe('testing localization off', () => { // remove async here
             .build();
 
         // Let Selenium go to the webpage
-        await driver.get('http://localhost:5173/public_html/restaurant.html');
+        await driver.get('https://localhost:5173/public_html/restaurant.html');
     });
 
     afterAll(async () => {
