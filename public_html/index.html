@@ -268,27 +268,29 @@
             });
             loginContainer.innerHTML = await user.getButton(metaConnector);
             changeLanguage();
+            function reloadButton() {
+                const loginButton = document.getElementsByClassName('login-button');
+                for (let i = 0; i < loginButton.length; i++) {
+                    loginButton[i].addEventListener('click',async () => {
+                        await user.login(metaConnector);
+                        loginContainer.innerHTML = await user.getButton(metaConnector);
+                        changeLanguage();
+                        reloadButton()
+                    });
+                }
 
-            const loginButton = document.getElementsByClassName('login-button');
-            for (let i = 0; i < loginButton.length; i++) {
-                loginButton[i].addEventListener('click',async () => {
-                    await user.login(metaConnector);
-                    location.reload();
-                });
+                const logoutButton = document.getElementsByClassName('logout-button');
+                for (let i = 0; i < logoutButton.length; i++) {
+                    logoutButton[i].addEventListener('click',async () => {
+                        await user.logout(metaConnector);
+                        loginContainer.innerHTML = await user.getButton(metaConnector);
+                        changeLanguage();
+                        reloadButton()
+                    });
+                }
             }
-
-            const logoutButton = document.getElementsByClassName('logout-button');
-            for (let i = 0; i < logoutButton.length; i++) {
-                logoutButton[i].addEventListener('click',async () => {
-                    await user.logout(metaConnector);
-                    location.reload();
-                });
-            }
-
-
+            reloadButton()
         };
-
-
     </script>
 
     <!-- Translations -->

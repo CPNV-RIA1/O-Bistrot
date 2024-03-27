@@ -27,18 +27,44 @@ class MetaConnector {
         });
     }
 
-    async getButton() {
-        //if allready connected
+    async getUsername() {
+        if (this.isAlreadyLogin()) {
+            return new Promise((resolve, reject) => {
+                FB.api('/me', function (response) {
+                    if (response) {
+                        resolve(response.name);
+                    } else {
+                        reject('No username');
+                    }
+                });
+            });
+        } else {
+            throw new Error("User is not connected")
+        }
+    }
+
+    async isAlreadyLogin() {
         try {
-            const checkUserConnected = await this.getLoginStatus()
+            const userData = await this.getLoginStatus();
+            return (userData.status === "connected")
         } catch {
+            return false;
+        }
+
+    }
+
+    async getButton() {
+        if (await this.isAlreadyLogin()) {
+            const username = await this.getUsername();
+            return '<a data-lang="en" class="logout-button btn btn-primary btn-sm">' + username + ' | Logout</a>' +
+                '<a data-lang="fr" class="logout-button btn btn-primary btn-sm">' + username + ' | Se deconnecter</a>' +
+                '<a data-lang="de" class="logout-button btn btn-primary btn-sm">' + username + ' | Abmelden</a>';
+        } else {
             return '<a data-lang="fr" class="login-button btn btn-primary btn-sm">Se connecter</a>' +
                 '<a data-lang="en" class="login-button btn btn-primary btn-sm" >Login</a>' +
                 '<a data-lang="de" class="login-button btn btn-primary btn-sm">Sich anmelden</a>';
         }
-        return '<a data-lang="en" class="logout-button btn btn-primary btn-sm">Logout</a>' +
-            '<a data-lang="fr" class="logout-button btn btn-primary btn-sm">Se deconnecter</a>' +
-            '<a data-lang="de" class="logout-button btn btn-primary btn-sm">Abmelden</a>';
+
     }
 
     logout() {
