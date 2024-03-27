@@ -36,8 +36,9 @@ class MetaConnector {
                 '<a data-lang="en" class="login-button btn btn-primary btn-sm" >Login</a>' +
                 '<a data-lang="de" class="login-button btn btn-primary btn-sm">Sich anmelden</a>';
         }
-        return '<a class="logout-button btn btn-primary btn-sm">Logout</a>';
-        console.log(checkUserConnected)
+        return '<a data-lang="en" class="logout-button btn btn-primary btn-sm">Logout</a>' +
+            '<a data-lang="fr" class="logout-button btn btn-primary btn-sm">Se deconnecter</a>' +
+            '<a data-lang="de" class="logout-button btn btn-primary btn-sm">Abmelden</a>';
     }
 
     logout() {
