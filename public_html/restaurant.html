@@ -29,15 +29,21 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Accueil</a>
+                        <a data-lang="fr" class="nav-link" href="index.html">Accueil</a>
+                        <a data-lang="en" class="nav-link" href="index.html">Home</a>
+                        <a data-lang="de" class="nav-link" href="index.html">Startseite</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Les restaurants</a>
+                        <a data-lang="fr" class="nav-link" href="index.html">Les restaurants</a>
+                        <a data-lang="en" class="nav-link" href="index.html">The restaurants</a>
+                        <a data-lang="de" class="nav-link" href="index.html">Die Restaurants</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="components.html" class="btn btn-primary btn-sm">Se connecter</a>
+                        <a data-lang="fr" href="components.html" class="btn btn-primary btn-sm">Se connecter</a>
+                        <a data-lang="en" href="components.html" class="btn btn-primary btn-sm">Login</a>
+                        <a data-lang="de" href="components.html" class="btn btn-primary btn-sm">Sich anmelden</a>
                     </li>
                 </ul>
             </div>
@@ -59,51 +65,154 @@
                     <span class="badge badge-primary">Bar</span>
                 </div>
             </div>
+            <div class="" id="details">
+                <div class="body">
+                    <div class="restaurant-rating text-primary">
+                        <div class="rate">
+                            4.0
+                            <img src="assets/imgs/stars.svg">
+                        </div>
+                    </div>
 
-            <div class="body">
-                <div class="restaurant-rating text-primary">
-                    <div class="rate">
-                        4.0
-                        <img src="assets/imgs/stars.svg">
+                    <div class="schedules">
+                        <h2 data-lang="fr">Horaires</h2>
+                        <h2 data-lang="en">Opening hours</h2>
+                        <h2 data-lang="de">Öffnungszeiten</h2>
+                        <p class="week">
+                            <span>
+                                <b data-lang="fr">Lundi:</b>
+                                <b data-lang="en">Monday:</b>
+                                <b data-lang="de">Montag:</b>
+                                06:00 - 18:00
+                            </span>
+                            <span>
+                                <b data-lang="fr">Mardi:</b>
+                                <b data-lang="en">Tuesday:</b>
+                                <b data-lang="de">Dienstag:</b>
+                                06:00 - 24:00
+                            </span>
+                            <span>
+                                <b data-lang="fr">Mercredi:</b>
+                                <b data-lang="en">Wednesday:</b>
+                                <b data-lang="de">Mittwoch:</b>
+                                06:00 - 24:00
+                            </span>
+                            <span>
+                                <b data-lang="fr">Jeudi:</b>
+                                <b data-lang="en">Thursday:</b>
+                                <b data-lang="de">Donnerstag:</b>
+                                06:00 - 24:00
+                            </span>
+                            <span>
+                                <b data-lang="fr">Vendredi:</b>
+                                <b data-lang="en">Friday:</b>
+                                <b data-lang="de">Freitag:</b>
+                                06:00 - 24:00
+                            </span>
+                            <span>
+                                <b data-lang="fr">Samedi:</b>
+                                <b data-lang="en">Saturday:</b>
+                                <b data-lang="de">Samstag:</b>
+                                07:00 - 24:00
+                            </span>
+                            <span>
+                                <b data-lang="fr">Dimanche:</b>
+                                <b data-lang="en">Sunday:</b>
+                                <b data-lang="de">Sonntag:</b>
+                                08:00 - 24:00
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="contact">
+                        <h2 data-lang="fr">Contact</h2>
+                        <h2 data-lang="en">Contact</h2>
+                        <h2 data-lang="de">Kontakt</h2>
+                        <p class="phone">
+                            <b data-lang="fr">Tel.</b>
+                            <b data-lang="en">Phone</b>
+                            <b data-lang="de">Telefonnummer</b>
+                            <span>+41 24 426 11 11</span>
+                        </p>
+
+                        <p class="address">
+                            <b data-lang="fr">Adresse</b>
+                            <b data-lang="en">Address</b>
+                            <b data-lang="de">Adresse</b>
+                            <span>Place Pestalozzi 7</span>
+                            <span>1400 Yverdon-les-Bains</span>
+                            <span>Switzerland</span>
+                        </p>
+                    </div>
+
+                    <div class="book">
+                        <h2 data-lang="fr">Réservation</h2>
+                        <h2 data-lang="en">Booking</h2>
+                        <h2 data-lang="de">Reservierung</h2>
+                        <button id="show-form-fr" onclick="displayReservationForm()" data-lang="fr" class="btn btn-primary">Réserver une table</button>
+                        <button id="show-form-de" onclick="displayReservationForm()" data-lang="de" class="btn btn-primary">Book a table</button>
+                        <button id="show-form-en" onclick="displayReservationForm()" data-lang="en" class="btn btn-primary">Einen Tisch reservieren</button>
                     </div>
                 </div>
+            </div>
 
-                <div class="schedules">
-                    <h2>Horaires</h2>
-                    <p class="week">
-                        <span><b>Lundi: </b> 06:00 - 18:00</span>
-                        <span><b>Mardi: </b> 06:00 - 24:00</span>
-                        <span><b>Mercredi: </b> 06:00 - 24:00</span>
-                        <span><b>Jeudi: </b> 06:00 - 24:00</span>
-                        <span><b>Vendredi: </b> 06:00 - 24:00</span>
-                        <span><b>Samedi: </b> 07:00 - 24:00</span>
-                        <span><b>Dimanche: </b> 08:00 - 24:00</span>
-                    </p>
+            <!-- Replacing the display of details by the form ----------------------------------------------------------->
+
+            <div class="hidden pt-3" id="reservationForm">
+                <button class="btn btn-primary" id="returnButton" onclick="displayReservationForm()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                        class="bi bi-arrow-left" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8" />
+                    </svg>
+                </button>
+                <span>
+                    <h3 data-lang="fr" class="pt-3">Votre réservation</h3>
+                    <h3 data-lang="de" class="pt-3">Ihre Buchung </h3>
+                    <h3 data-lang="en" class="pt-3">Your Reservation</h3>
+                </span>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group reservation">
+                                <label data-lang="fr" for="lastname">Nom</label>
+                                <label data-lang="de" for="lastname">Nachname</label>
+                                <label data-lang="en" for="lastname">Last Name</label>
+                                <input class="form-control" id="lastname">
+                            </div>
+                            <div class="form-group reservation">
+                                <label data-lang="fr" for="date">Date</label>
+                                <label data-lang="de" for="date">Datum</label>
+                                <label data-lang="en" for="date">Date</label>
+                                <input type="date" class="form-control" id="date">
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xs-12">
+                            <div class="form-group reservation">
+                                <label data-lang="fr" for="firstname">Prénom</label>
+                                <label data-lang="de" for="firstname">Vorname</label>
+                                <label data-lang="en" for="firstname">First Name</label>
+                                <input class="form-control" id="firstname">
+                            </div>
+                            <div class="form-group reservation">
+                                <label data-lang="fr" for="timeInput">Heure</label>
+                                <label data-lang="de" for="timeInput">Uhrzeit</label>
+                                <label data-lang="en" for="timeInput">Hour</label>
+                                <input class="form-control" id="timeInput" pattern="([01]?[0-9]|2[0-3]):[0-5][0-9]"
+                                    placeholder="19:30" oninput="validateTime(this)">
+                            </div>
+                        </div>
+                    </div>
+                    <form class="body">
+                        <div class="validation-button">
+                            <button data-lang="fr" class="btn btn-primary">Réserver</button>
+                            <button data-lang="de" class="btn btn-primary">Buchen</button>
+                            <button data-lang="en" class="btn btn-primary">Book</button>
+                        </div>
+                    </form>
                 </div>
-
-                <div class="contact">
-                    <h2>Contact</h2>
-                    <p class="phone">
-                        <b>Tel.</b>
-                        <span>+41 24 426 11 11</span>
-                    </p>
-
-                    <p class="address">
-                        <b>Adresse</b>
-                        <span>Place Pestalozzi 7</span>
-                        <span>1400 Yverdon-les-Bains</span>
-                        <span>Switzerland</span>                        
-                    </p>
-                </div>
-
-                <form class="book">
-                    <h2>Réservation</h2>
-                    <input type="date">
-                    <input type="submit" value="Réserver une table">
-                </form>
             </div>
         </div>
-
     </section>
 
     <!-- Page Footer -->
@@ -113,8 +222,24 @@
                 <div class="col">
                     <p class="mb-0 small">&copy;
                         <script>document.write(new Date().getFullYear())</script>, <a
-                            href="https://github.com/CPNV-RIA1/O-Bistrot" target="_blank">CYSEVI</a> All rights reserved
+                            href="https://github.com/CPNV-RIA1/O-Bistrot" target="_blank">CYSEVI</a>
+                        <span data-lang="fr">Tous droits réservés</span>
+                        <span data-lang="en">All rights reserved</span>
+                        <span data-lang="de">Alle Rechte vorbehalten</span>
                     </p>
+                </div>
+                <div class="col">
+                    <select id="change-language">
+                        <option value="fr" selected="selected">
+                            Français
+                        </option>
+                        <option value="en">
+                            English
+                        </option>
+                        <option value="de">
+                            Deutsch
+                        </option>
+                    </select>
                 </div>
                 <div class="d-none d-md-block">
                     <h6 class="small mb-0">
@@ -136,6 +261,14 @@
 
     <!-- Pigga js -->
     <script src="assets/js/pigga.js"></script>
+
+    <!-- Translations -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>
+
+    <!-- custom scripts -->
+    <script src="assets/js/showReservationForm.js"></script>
+    <script src="assets/js/validateHourForm.js"></script>
+
 
 </body>
 

@@ -21,32 +21,30 @@ To collaborate on the project, the following conventions must be followed:
 - git management is based on gitflow conventions
 - each story must be created in a dedicated feature with the following naming: `feature/BDD-name-of-the-feature`.
 - commits must respect the following conventions:
-  - `feat: add new feature`
+  - `feat: implementation about something new in a feature`
   - `fix: fix a bug`
   - `refactor: refactor code`
-  - `style: change style`.
   - `style: change style`
   - `docs: change documentation`
   - `test: add tests`
-  - `chore: change configuration`
-- To create tests, we use the Jest framework and keep to its conventions. Tests must be separated into two categories:
-  - Online (real) tests, which use real API calls
-  - Offline (off) tests, which use mocks for API calls
-
-  Here is an example of test naming:
-    ```javascript
-    describe('User initialisation', () => {
-        test('initialize User', () => {
-            // GIVEN
-            let user;
-            // WHEN
-            user = new User();
-            // THEN
-            expect(user.status).toEqual('disconnected');
-        });
-    });
-    ```
-
+  - `chore: change configuration and update readme/.gitingore`
+## Structure 
+```bash
+O-Bistrot
+.
+├── public_html
+│   └── assets
+│       css
+│       ├── imgs
+│       ├── js
+│       ├── scss
+│       └── vendors
+└── src
+    ├── test
+    └── models
+```
+## Diagrams
+[on figma](https://www.figma.com/file/dXGq9ZvB5ZjJXiPXw1TcwZ/Untitled?type=design&node-id=0-1&mode=design&t=E6n5gu7ZWdJKxPgy-0)
 ## Authors
 - Victorien Montavon
 - Cyprien Jaquier
