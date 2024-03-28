@@ -33,66 +33,84 @@ describe('testing localization off', () => { // remove async here
     });
 
     test('Should change language to French', async () => {
+        // Given
         // Get the initial DOM structure
         const initialDOM = await driver.getPageSource();
-
-        // Simulate language change action (for example, clicking a language selector)
         const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
         const option = await selectElement.findElement(By.css(`option[value='fr']`));
+
+        // check that the initial language is not french
+        const selectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
+        expect(selectedLanguage).not.toEqual('fr');
+
+        // When
+        // Change language to french
         await option.click();
 
+        // Then
         // Get the updated DOM structure after the language change
         const updatedDOM = await driver.getPageSource();
-
+        const updatedSelectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
         // Assuming the DOM structure changes after the language change
         expect(updatedDOM).not.toEqual(initialDOM);
+        expect(updatedSelectedLanguage).toEqual('fr');
     });
 
-    test('User entered content change', async () => {        
-        // Simulate language change action (for example, clicking a language selector)
+    test('User entered content change', async () => {
+        // Given    
         const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
-        const optionFR = await selectElement.findElement(By.css(`option[value='fr']`));
-        await optionFR.click();
+        const buttonToShowForm = await driver.wait(until.elementLocated(By.id('show-form-fr')), 5000);
+        const datePicker = await driver.wait(until.elementLocated(By.id('date')), 5000);
+        const optionEN = await selectElement.findElement(By.css(`option[value='en']`));
+
+        // check that the initial language is not english
+        const selectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
+        expect(selectedLanguage).not.toEqual('en');
+        expect(datePicker).not.toBeNull();
+        expect(await datePicker.getAttribute('value')).toEqual('');
 
         //Toggle the display of the form 
-        const buttonToShowForm = await driver.wait(until.elementLocated(By.id('show-form-fr')), 5000);
         await buttonToShowForm.click();
-
         //set the initial date
-        const datePicker = await driver.wait(until.elementLocated(By.id('date')), 5000);
         await datePicker.click()
         await datePicker.sendKeys('03-04-2024');
-
-        // Get the initial booking date
         const bookingDate = await datePicker.getAttribute('value');
 
-        // Simulate language change action (for example, clicking a language selector)
-        const optionEN = await selectElement.findElement(By.css(`option[value='en']`));
+        // When
+        // Change language to english
         await optionEN.click();
 
+        // Then
         // Get the updated date
         const updatedBookingDate = await datePicker.getAttribute('value');
-
+        const updatedSelectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
         // Assuming the dates are the same after the language change
+        expect(updatedSelectedLanguage).toEqual('en');
         expect(updatedBookingDate).toEqual(bookingDate);
     });
 
     test('Positioning of graphical elements', async () => {
-
+        // Given
         // Get the initial html width
         const body = await driver.wait(until.elementLocated(By.id('home')), 5000);
-        const initialBodyWith = await body.getCssValue('width');
-    
-        // Simulate language change action (for example, clicking a language selector)
         const selectElement = await driver.wait(until.elementLocated(By.id('change-language')), 5000);
         const option = await selectElement.findElement(By.css(`option[value='de']`));
+        const initialBodyWith = await body.getCssValue('width');
+
+        // check that the initial language is not german
+        const selectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
+        expect(selectedLanguage).not.toEqual('de');
+
+        // When
+        // Change language to german
         await option.click();
-        
-        // Get the updated html html width
-        const updatedHTML = await driver.getPageSource();
+
+        // Then
+        // Get the updated html width
         const updatedBodyWidth = await body.getCssValue('width');
-    
+        const updatedSelectedLanguage = await selectElement.findElement(By.css('option:checked')).getAttribute('value');
         // Assuming the HTML width is the same after the language change and did not overflow the screen
+        expect(updatedSelectedLanguage).toEqual('de');
         expect(updatedBodyWidth).toEqual(initialBodyWith);
     });
 });
