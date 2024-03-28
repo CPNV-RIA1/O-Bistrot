@@ -6,18 +6,20 @@ class User{
         this.status = 'disconnected';
     }
 
-    login(connector){
-        let userDataJson = connector.login();
-        return userDataJson;
+    async login(connector){
+        return await connector.login();
     }
-    logout(){
-        this.status = 'disconnected';
-        this.userId = "";
+    async logout(connector){
+        return await connector.logout();
     }
     importMetaData(data){
         this.status = data.status;
         this.userId = data.authResponse.userID;
     }
+
+    getButton(connector){
+        return connector.getButton();
+    }
 }
 
-module.exports = User;
+window.User = User;

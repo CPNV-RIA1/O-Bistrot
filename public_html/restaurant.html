@@ -13,8 +13,23 @@
     <!-- Bootstrap + Pigga main styles -->
     <link rel="stylesheet" href="assets/css/pigga.css">
     <link rel="stylesheet" href="assets/css/custom-styles.css">
-
-</head>
+    <script src="../src/User.js"></script>
+    <script src="../src/MetaConnector.js"></script>
+    <!-- core  -->
+    <script defer src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+    <script defer src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
+    <!-- bootstrap affix -->
+    <script defer src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
+    <!-- Pigga js -->
+    <script defer src="assets/js/pigga.js"></script>
+    <!-- Facebook SDK -->
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <script defer src="assets/js/loginHelper.js" defer></script>
+    <!-- Translations -->
+    <script defer type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>
+    <!-- custom scripts -->
+    <script defer src="assets/js/showReservationForm.js"></script>
+    <script defer src="assets/js/validateTime.js"></script>
 
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home" style="display: flex; flex-direction: column;">
 
@@ -29,21 +44,18 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a data-lang="fr" class="nav-link" href="index.html">Accueil</a>
-                        <a data-lang="en" class="nav-link" href="index.html">Home</a>
-                        <a data-lang="de" class="nav-link" href="index.html">Startseite</a>
+                        <a data-lang="fr" class="nav-link" href="home.html">Accueil</a>
+                        <a data-lang="en" class="nav-link" href="home.html">Home</a>
+                        <a data-lang="de" class="nav-link" href="home.html">Startseite</a>
                     </li>
                     <li class="nav-item">
-                        <a data-lang="fr" class="nav-link" href="index.html">Les restaurants</a>
-                        <a data-lang="en" class="nav-link" href="index.html">The restaurants</a>
-                        <a data-lang="de" class="nav-link" href="index.html">Die Restaurants</a>
+                        <a data-lang="fr" class="nav-link" href="home.html">Les restaurants</a>
+                        <a data-lang="en" class="nav-link" href="home.html">The restaurants</a>
+                        <a data-lang="de" class="nav-link" href="home.html">Die Restaurants</a>
                     </li>
                 </ul>
                 <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a data-lang="fr" href="components.html" class="btn btn-primary btn-sm">Se connecter</a>
-                        <a data-lang="en" href="components.html" class="btn btn-primary btn-sm">Login</a>
-                        <a data-lang="de" href="components.html" class="btn btn-primary btn-sm">Sich anmelden</a>
+                    <li id="login-container" class="nav-item">
                     </li>
                 </ul>
             </div>
@@ -149,9 +161,12 @@
                         <h2 data-lang="fr">Réservation</h2>
                         <h2 data-lang="en">Booking</h2>
                         <h2 data-lang="de">Reservierung</h2>
-                        <button id="show-form-fr" onclick="displayReservationForm()" data-lang="fr" class="btn btn-primary">Réserver une table</button>
-                        <button id="show-form-de" onclick="displayReservationForm()" data-lang="de" class="btn btn-primary">Book a table</button>
-                        <button id="show-form-en" onclick="displayReservationForm()" data-lang="en" class="btn btn-primary">Einen Tisch reservieren</button>
+                        <button id="show-form-fr" onclick="displayReservationForm()" data-lang="fr"
+                            class="btn btn-primary">Réserver une table</button>
+                        <button id="show-form-de" onclick="displayReservationForm()" data-lang="en"
+                            class="btn btn-primary">Book a table</button>
+                        <button id="show-form-en" onclick="displayReservationForm()" data-lang="de"
+                            class="btn btn-primary">Einen Tisch reservieren</button>
                     </div>
                 </div>
             </div>
@@ -251,25 +266,6 @@
 
     </footer>
     <!-- End of Page Footer -->
-
-    <!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
-    <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
-
-    <!-- bootstrap affix -->
-    <script src="assets/vendors/bootstrap/bootstrap.affix.js"></script>
-
-    <!-- Pigga js -->
-    <script src="assets/js/pigga.js"></script>
-
-    <!-- Translations -->
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/i18n-language@1.0.8/i18n-language.min.js"></script>
-
-    <!-- custom scripts -->
-    <script src="assets/js/showReservationForm.js"></script>
-    <script src="assets/js/validateHourForm.js"></script>
-
-
 </body>
 
 </html>
