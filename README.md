@@ -17,7 +17,7 @@ For set up the project on your local machine, you need to follow the following s
 - Run the project with the following command:
 ```npm run dev```
 - Open your browser and go to the following address:
-  [http://localhost:5173/public_html/index.html](http://localhost:5173/public_html/index.html)
+  [http://localhost:5173/public_html/home.html](http://localhost:5173/public_html/home.html)
 
 ### On production environment
 *available soon*
