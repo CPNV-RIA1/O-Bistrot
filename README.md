@@ -18,7 +18,7 @@ List all dependencies and their version needed by the project as :
 ## Collaborate
 
 To collaborate on the project, the following conventions must be followed:
-- git management is based on gitflow conventions
+- git management is based on [gitflow](https://www.atlassian.com/fr/git/tutorials/comparing-workflows/gitflow-workflow) conventions
 - each story must be created in a dedicated feature with the following naming: `feature/BDD-name-of-the-feature`.
 - commits must respect the following conventions:
   - `feat: implementation about something new in a feature`
@@ -28,6 +28,10 @@ To collaborate on the project, the following conventions must be followed:
   - `docs: change documentation`
   - `test: add tests`
   - `chore: change configuration and update readme/.gitignore`
+- The stories are technical based and follow the [icescrum](https://icescrum.cpnv.ch/p/RIA1PROJEC/#/planning/3923/details)
+- Issues will be displayed on the purpose github issue page
+- The discussion about the on working are being conducted in our personnal Discord (acces can be requested by contact)
+    
 ## Structure 
 ```bash
 O-Bistrot
@@ -35,19 +39,24 @@ O-Bistrot
 ├── public_html
 │   └── assets
 │       css
-│       ├── imgs
-│       ├── js
-│       ├── scss
-│       └── vendors
+│       ├── imgs        
+│       ├── js          // Our custom script and the one from the template
+│       ├── scss        
+│       └── vendors     // External JS library
 └── src
-    ├── test
-    └── models
+    ├── test            // Classes for testing
+    └── models          // Logical model
 ```
 ## Diagrams
-[on figma](https://www.figma.com/file/yOVI2HH2C1dpsqDpLlH6it/Diagrams?type=design&node-id=2-2&mode=design&t=EIcA1AfOcoe1ms3t-0)
+- Basic understandings : [On figma](https://www.figma.com/file/yOVI2HH2C1dpsqDpLlH6it/Diagrams?type=design&node-id=2-2&mode=design&t=EIcA1AfOcoe1ms3t-0)
+- Class Diagram : [On LucidChart](https://lucid.app/lucidchart/5ea62d06-7303-4392-9b2d-81b3774c5008/edit?viewport_loc=611%2C-324%2C1644%2C1045%2C0_0&invitationId=inv_0775b473-8e54-4bc9-8559-b5252b5dd1e9)
 ## Authors
 - Victorien Montavon
 - Cyprien Jaquier
 - Sebastien Moraz
 ## License
 ## Contact
+<p>Victorien Montavon : victorien.montavon@eduvaud.ch</p>
+<p>Cyprien Jaquier : cyprien.jaquier@eduvaud.ch</p>
+<p>Sebastien Moraz : sebastien.moraz@eduvaud.ch</p>
+
