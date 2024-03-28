@@ -10,7 +10,18 @@ List all dependencies and their version needed by the project as :
 - ### Configuration
 ## Deployment
 ### On dev environment
-### On integration environment
+For set up the project on your local machine, you need to follow the following steps:
+- Clone the project from the repository
+- Install the dependencies with the following command:
+```npm install```
+- Run the project with the following command:
+```npm run dev```
+- Open your browser and go to the following address:
+  [http://localhost:5173/public_html/home.html](http://localhost:5173/public_html/home.html)
+
+### On production environment
+*available soon*
+
 ## Directory structure
 ## Design
 - [HTML Template](https://www.free-css.com/free-css-templates/page277/pigga)
@@ -55,8 +66,8 @@ O-Bistrot
 - Cyprien Jaquier
 - Sebastien Moraz
 ## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.txt) file for details
 ## Contact
 <p>Victorien Montavon : victorien.montavon@eduvaud.ch</p>
 <p>Cyprien Jaquier : cyprien.jaquier@eduvaud.ch</p>
 <p>Sebastien Moraz : sebastien.moraz@eduvaud.ch</p>
-
